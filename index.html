@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aroma & Co. | Specialty Coffee Roasters</title>
+    
+    <!-- Tailwind CSS for rapid styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Playfair Display for headings, Inter for body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        coffee: {
+                            50: '#fdf8f6',
+                            100: '#f2e8e5',
+                            200: '#eaddd7',
+                            300: '#e0cec7',
+                            400: '#d2bab0',
+                            500: '#a37c68', // Brand primary
+                            600: '#7b5844',
+                            700: '#5c4033', // Dark roast
+                            800: '#4a332a',
+                            900: '#2b1d18',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for an extra premium feel */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #fdf8f6; }
+        ::-webkit-scrollbar-thumb { background: #a37c68; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #7b5844; }
+    </style>
+</head>
+<body class="font-sans text-coffee-800 bg-coffee-50 antialiased selection:bg-coffee-500 selection:text-white">
+
+    <!-- Navigation Bar -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+                    <i class="fa-solid fa-mug-hot text-coffee-500 text-2xl"></i>
+                    <span class="font-serif font-bold text-2xl text-coffee-900 tracking-tight">Aroma & Co.</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="text-coffee-600 hover:text-coffee-900 font-medium transition-colors">Home</a>
+                    <a href="#about" class="text-coffee-600 hover:text-coffee-900 font-medium transition-colors">Our Story</a>
+                    <a href="#menu" class="text-coffee-600 hover:text-coffee-900 font-medium transition-colors">Menu</a>
+                    <a href="#contact" class="text-coffee-600 hover:text-coffee-900 font-medium transition-colors">Contact</a>
+                    <a href="#menu" class="bg-coffee-500 hover:bg-coffee-700 text-white px-6 py-2 rounded-full font-medium transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">Order Now</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-coffee-900 hover:text-coffee-500 focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-coffee-100 absolute w-full shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-coffee-900 hover:bg-coffee-50">Home</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-coffee-900 hover:bg-coffee-50">Our Story</a>
+                <a href="#menu" class="block px-3 py-2 rounded-md text-base font-medium text-coffee-900 hover:bg-coffee-50">Menu</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-coffee-900 hover:bg-coffee-50">Contact</a>
+                <a href="#menu" class="block w-full text-center mt-4 bg-coffee-500 text-white px-3 py-3 rounded-md font-medium">Order Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-20 pb-32 flex items-center justify-center min-h-[90vh]">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&q=80&w=2000" alt="Coffee shop interior" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-coffee-900/60 mix-blend-multiply"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-coffee-900/90"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16">
+            <span class="block text-coffee-300 font-medium tracking-[0.2em] uppercase mb-4 text-sm sm:text-base">Experience the perfect blend</span>
+            <h1 class="font-serif text-5xl sm:text-6xl md:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
+                Awaken Your <br class="hidden sm:block"/> <span class="text-coffee-300 italic">Senses.</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-gray-200 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+                Artisanal coffee roasted in-house daily. Cozy atmosphere, fresh pastries, and the best espresso in town.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#menu" class="bg-coffee-500 hover:bg-coffee-400 text-white px-8 py-4 rounded-full text-lg font-medium transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1">
+                    View Our Menu
+                </a>
+                <a href="#about" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-coffee-900 px-8 py-4 rounded-full text-lg font-medium transition-all">
+                    Our Story
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl text-coffee-900 font-bold mb-4">Why Choose Us</h2>
+                <div class="w-24 h-1 bg-coffee-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+                <!-- Feature 1 -->
+                <div class="p-6 rounded-2xl bg-coffee-50 hover:shadow-xl transition-shadow duration-300 border border-coffee-100/50">
+                    <div class="w-16 h-16 mx-auto bg-coffee-500 rounded-full flex items-center justify-center mb-6 shadow-md">
+                        <i class="fa-solid fa-seedling text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-coffee-900 mb-3 font-serif">Organic Beans</h3>
+                    <p class="text-coffee-600">We source only the finest, 100% organic fair-trade coffee beans from sustainable farms worldwide.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="p-6 rounded-2xl bg-coffee-50 hover:shadow-xl transition-shadow duration-300 border border-coffee-100/50">
+                    <div class="w-16 h-16 mx-auto bg-coffee-500 rounded-full flex items-center justify-center mb-6 shadow-md">
+                        <i class="fa-solid fa-fire-burner text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-coffee-900 mb-3 font-serif">In-House Roasting</h3>
+                    <p class="text-coffee-600">Our master roasters craft small batches daily to ensure every cup is bursting with fresh flavor.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="p-6 rounded-2xl bg-coffee-50 hover:shadow-xl transition-shadow duration-300 border border-coffee-100/50">
+                    <div class="w-16 h-16 mx-auto bg-coffee-500 rounded-full flex items-center justify-center mb-6 shadow-md">
+                        <i class="fa-solid fa-mug-saucer text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-coffee-900 mb-3 font-serif">Expert Baristas</h3>
+                    <p class="text-coffee-600">Passionate artisans dedicated to pulling the perfect espresso shot and pouring beautiful latte art.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-24 bg-coffee-100 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div>
+                    <h2 class="font-serif text-4xl md:text-5xl text-coffee-900 font-bold mb-4">Our Classics</h2>
+                    <p class="text-coffee-600 max-w-xl text-lg">Handcrafted beverages made with precision and love. Discover your new favorite daily ritual.</p>
+                </div>
+                <div class="flex gap-2">
+                    <button class="bg-coffee-900 text-white px-5 py-2 rounded-full text-sm font-medium">Coffee</button>
+                    <button class="bg-transparent border border-coffee-300 text-coffee-700 hover:bg-coffee-200 px-5 py-2 rounded-full text-sm font-medium transition">Pastries</button>
+                </div>
+            </div>
+
+            <!-- Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Item 1 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551030173-122aabc4489c?auto=format&fit=crop&q=80&w=600" alt="Espresso" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full font-bold text-coffee-900 shadow-sm">$3.50</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-xl font-bold text-coffee-900 mb-2">Double Espresso</h3>
+                        <p class="text-sm text-coffee-600 mb-4 line-clamp-2">Rich, intense, and complex flavor profile with a perfect golden crema on top.</p>
+                        <button class="w-full py-2.5 rounded-xl border border-coffee-200 text-coffee-700 font-medium hover:bg-coffee-500 hover:text-white hover:border-transparent transition-all">Add to Order</button>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&q=80&w=600" alt="Cappuccino" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full font-bold text-coffee-900 shadow-sm">$4.50</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-xl font-bold text-coffee-900 mb-2">Classic Cappuccino</h3>
+                        <p class="text-sm text-coffee-600 mb-4 line-clamp-2">Equal parts espresso, steamed milk, and a deep layer of airy milk foam.</p>
+                        <button class="w-full py-2.5 rounded-xl border border-coffee-200 text-coffee-700 font-medium hover:bg-coffee-500 hover:text-white hover:border-transparent transition-all">Add to Order</button>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&q=80&w=600" alt="Latte" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full font-bold text-coffee-900 shadow-sm">$4.75</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-xl font-bold text-coffee-900 mb-2">Caramel Latte</h3>
+                        <p class="text-sm text-coffee-600 mb-4 line-clamp-2">Silky steamed milk poured over espresso, finished with house-made caramel syrup.</p>
+                        <button class="w-full py-2.5 rounded-xl border border-coffee-200 text-coffee-700 font-medium hover:bg-coffee-500 hover:text-white hover:border-transparent transition-all">Add to Order</button>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&q=80&w=600" alt="Cold Brew" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full font-bold text-coffee-900 shadow-sm">$4.00</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-xl font-bold text-coffee-900 mb-2">Nitro Cold Brew</h3>
+                        <p class="text-sm text-coffee-600 mb-4 line-clamp-2">Steeped for 24 hours and infused with nitrogen for a creamy, stout-like effect.</p>
+                        <button class="w-full py-2.5 rounded-xl border border-coffee-200 text-coffee-700 font-medium hover:bg-coffee-500 hover:text-white hover:border-transparent transition-all">Add to Order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner Section -->
+    <section class="bg-coffee-900 py-16 relative overflow-hidden">
+        <div class="absolute -right-20 -top-20 opacity-10">
+            <i class="fa-solid fa-mug-hot text-[300px] text-white"></i>
+        </div>
+        <div class="max-w-5xl mx-auto px-4 relative z-10 text-center">
+            <h2 class="font-serif text-3xl md:text-5xl font-bold text-white mb-6">Get 15% off your first order</h2>
+            <p class="text-coffee-200 mb-8 max-w-xl mx-auto">Join our coffee club and receive exclusive offers, brewing tips, and updates on new roasts directly to your inbox.</p>
+            <form class="flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto" onsubmit="event.preventDefault();">
+                <input type="email" placeholder="Enter your email" class="flex-1 px-5 py-3 rounded-full text-coffee-900 focus:outline-none focus:ring-2 focus:ring-coffee-500 bg-white" required>
+                <button type="submit" class="bg-coffee-500 hover:bg-coffee-400 text-white px-8 py-3 rounded-full font-medium transition-colors shadow-lg">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact & Footer -->
+    <footer id="contact" class="bg-coffee-900 text-coffee-300 pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Brand Info -->
+                <div class="lg:col-span-1">
+                    <div class="flex items-center gap-2 mb-6">
+                        <i class="fa-solid fa-mug-hot text-coffee-500 text-2xl"></i>
+                        <span class="font-serif font-bold text-2xl text-white">Aroma & Co.</span>
+                    </div>
+                    <p class="text-sm mb-6 leading-relaxed text-coffee-300">Dedicated to the art of coffee. We believe every cup tells a story, from farm to table.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-coffee-800 flex items-center justify-center hover:bg-coffee-500 hover:text-white transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-coffee-800 flex items-center justify-center hover:bg-coffee-500 hover:text-white transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-coffee-800 flex items-center justify-center hover:bg-coffee-500 hover:text-white transition-colors"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white font-serif font-bold text-lg mb-6 tracking-wide">Quick Links</h4>
+                    <ul class="space-y-3 text-sm text-coffee-300">
+                        <li><a href="#home" class="hover:text-coffee-100 transition-colors">Home</a></li>
+                        <li><a href="#about" class="hover:text-coffee-100 transition-colors">About Us</a></li>
+                        <li><a href="#menu" class="hover:text-coffee-100 transition-colors">Full Menu</a></li>
+                        <li><a href="#" class="hover:text-coffee-100 transition-colors">Wholesale</a></li>
+                        <li><a href="#" class="hover:text-coffee-100 transition-colors">Careers</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-white font-serif font-bold text-lg mb-6 tracking-wide">Visit Us</h4>
+                    <ul class="space-y-4 text-sm text-coffee-300">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-coffee-500"></i>
+                            <span>123 Coffee Bean Way<br>Seattle, WA 98101</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-coffee-500"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-coffee-500"></i>
+                            <span>hello@aromaco.com</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Opening Hours -->
+                <div>
+                    <h4 class="text-white font-serif font-bold text-lg mb-6 tracking-wide">Hours</h4>
+                    <ul class="space-y-3 text-sm text-coffee-300">
+                        <li class="flex justify-between border-b border-coffee-800 pb-2">
+                            <span>Mon - Fri</span>
+                            <span>6:30 AM - 8:00 PM</span>
+                        </li>
+                        <li class="flex justify-between border-b border-coffee-800 pb-2">
+                            <span>Saturday</span>
+                            <span>7:30 AM - 9:00 PM</span>
+                        </li>
+                        <li class="flex justify-between border-b border-coffee-800 pb-2">
+                            <span>Sunday</span>
+                            <span>8:00 AM - 6:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-coffee-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-coffee-400">
+                <p>&copy; 2026 Aroma & Co. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Mobile Menu Toggle Logic
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const icon = btn.querySelector('i');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            // Change icon from hamburger to close
+            if (menu.classList.contains('hidden')) {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            }
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+        // Navbar blur and shadow on scroll
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body>
+</html>
